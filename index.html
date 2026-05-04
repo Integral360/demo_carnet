@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carnet Digital Estudiantil</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #06183d, #0b5ed7, #f4c542);
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      color: #fff;
+    }
+
+    .app {
+      width: 100%;
+      max-width: 430px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      backdrop-filter: blur(18px);
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+    }
+
+    .header {
+      padding: 28px 22px;
+      text-align: center;
+      background: linear-gradient(160deg, rgba(255,255,255,0.18), rgba(255,255,255,0.05));
+    }
+
+    .school-badge {
+      width: 76px;
+      height: 76px;
+      border-radius: 22px;
+      margin: auto;
+      background: #fff;
+      color: #0b3d91;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+      font-weight: 900;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    }
+
+    .school {
+      margin-top: 14px;
+      font-size: 14px;
+      letter-spacing: 1px;
+      opacity: .9;
+      text-transform: uppercase;
+    }
+
+    .photo {
+      width: 132px;
+      height: 132px;
+      margin: 20px auto 12px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f7d774, #ffffff);
+      border: 5px solid rgba(255,255,255,0.75);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 56px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      font-size: 28px;
+      line-height: 1.1;
+    }
+
+    .subtitle {
+      margin-top: 8px;
+      font-size: 15px;
+      opacity: .9;
+    }
+
+    .status {
+      margin: 16px auto 0;
+      width: fit-content;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(38, 255, 147, .18);
+      color: #8dffbd;
+      font-weight: 700;
+      font-size: 13px;
+      border: 1px solid rgba(141,255,189,.4);
+    }
+
+    .content {
+      padding: 22px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 24px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+
+    .card h2 {
+      font-size: 17px;
+      margin-bottom: 14px;
+      color: #ffe27a;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      font-size: 14px;
+    }
+
+    .row:last-child {
+      border-bottom: none;
+    }
+
+    .label {
+      opacity: .75;
+    }
+
+    .value {
+      font-weight: 700;
+      text-align: right;
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .btn {
+      text-decoration: none;
+      color: #fff;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 20px;
+      padding: 14px 8px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .25s ease;
+    }
+
+    .btn span {
+      display: block;
+      font-size: 26px;
+      margin-bottom: 6px;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      background: rgba(255,255,255,0.25);
+    }
+
+    .alert {
+      background: rgba(255, 193, 7, .18);
+      border: 1px solid rgba(255, 226, 122, .4);
+      color: #fff7cc;
+      border-radius: 20px;
+      padding: 14px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .footer {
+      padding: 18px;
+      text-align: center;
+      font-size: 12px;
+      opacity: .8;
+    }
+
+    .footer a {
+      color: #ffe27a;
+      text-decoration: none;
+      font-weight: 700;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="app">
+
+    <section class="header">
+      <div class="school-badge">NH</div>
+      <div class="school">Colegio Nuevo Horizonte</div>
+
+<div class="photo">
+  <img src="foto.png" alt="Estudiante">
+</div>
+
+      <h1>Valeria Sofía<br>Martínez Ríos</h1>
+      <p class="subtitle">Carnet Estudiantil Digital NFC</p>
+
+      <div class="status">ESTUDIANTE ACTIVA · 2026</div>
+    </section>
+
+    <section class="content">
+
+      <div class="actions">
+        <a class="btn" href="tel:+573001112233">
+          <span>📞</span>
+          Llamar
+        </a>
+
+        <a class="btn" href="https://wa.me/573001112233" target="_blank">
+          <span>💬</span>
+          WhatsApp
+        </a>
+
+        <a class="btn" href="mailto:secretaria@nuevohorizonte.edu.co">
+          <span>✉️</span>
+          Colegio
+        </a>
+
+        <a class="btn" href="https://maps.google.com" target="_blank">
+          <span>📍</span>
+          Ubicación
+        </a>
+
+        <a class="btn" href="#">
+          <span>🏫</span>
+          Web
+        </a>
+
+        <a class="btn" href="#">
+          <span>🚨</span>
+          Emergencia
+        </a>
+      </div>
+
+      <div class="card">
+        <h2>🪪 Información del estudiante</h2>
+
+        <div class="row">
+          <div class="label">Código</div>
+          <div class="value">NH-2026-0847</div>
+        </div>
+
+        <div class="row">
+          <div class="label">Grado</div>
+          <div class="value">6° B</div>
+        </div>
+
+        <div class="row">
+          <div class="label">Jornada</div>
+          <div class="value">Mañana</div>
+        </div>
+
+        <div class="row">
+          <div class="label">Sede</div>
+          <div class="value">Principal</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>👨‍👩‍👧 Acudientes</h2>
+
+        <div class="row">
+          <div class="label">Madre</div>
+          <div class="value">Carolina Ríos</div>
+        </div>
+
+        <div class="row">
+          <div class="label">Padre</div>
+          <div class="value">Andrés Martínez</div>
+        </div>
+
+        <div class="row">
+          <div class="label">Contacto</div>
+          <div class="value">Oculto por seguridad</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>🩺 Información importante</h2>
+
+        <div class="row">
+          <div class="label">Tipo de sangre</div>
+          <div class="value">O+</div>
+        </div>
+
+        <div class="row">
+          <div class="label">Alergias</div>
+          <div class="value">Polen</div>
+        </div>
+
+        <div class="row">
+          <div class="label">Observación</div>
+          <div class="value">Usar contacto acudiente</div>
+        </div>
+      </div>
+
+      <div class="alert">
+        ⚠️ Este carnet digital es una demostración. En una versión real, la información sensible debe protegerse y los contactos deben funcionar mediante botones, sin mostrar números públicamente.
+      </div>
+
+    </section>
+
+    <footer class="footer">
+      Powered by <a href="https://integral360.com.co" target="_blank">Integral360</a>
+    </footer>
+
+  </main>
+
+</body>
+</html>
